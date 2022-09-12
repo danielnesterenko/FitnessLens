@@ -12,4 +12,6 @@
     <string name="enterWorkoutCancel">Zurück</string>
     <string name="ExerciseName">Übung:</string>
     <string name="ExerciseName2">Übung eingeben ...</string>
+    <string name="tV_addExercise">Übung hinzufügen</string>
+    <string name="tV_addSet">Satz hinzufügen</string>
 </resources>
