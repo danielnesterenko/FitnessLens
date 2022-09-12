@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FitnessLens</string>
+    <string name="statistics">Statistics</string>
+    <string name="calories">Calories</string>
+    <string name="settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="toolbar_workout_text">WORKOUT RECORD\'S</string>
+    <string name="workout_name">Enter Workout ...</string>
+    <string name="workoutName">Workout:</string>
+    <string name="workoutName2">Workout Name ...</string>
+    <string name="enterWorkoutAdd">Add</string>
+    <string name="enterWorkoutCancel">Cancel</string>
+    <string name="ExerciseName">Exercise:</string>
+    <string name="ExerciseName2">Enter Exercise ...</string>
+</resources>

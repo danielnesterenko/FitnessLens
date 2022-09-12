@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FitnessLens</string>
+    <string name="statistics">Statistik</string>
+    <string name="calories">Kalorien</string>
+    <string name="settings">Einstellungen</string>
+    <string name="toolbar_workout_text">TRAININGSEINHEITEN</string>
+    <string name="workout_name">Training eingeben ...</string>
+    <string name="workoutName">Training:</string>
+    <string name="workoutName2">Trainingsname ...</string>
+    <string name="enterWorkoutAdd">Hinzufügen</string>
+    <string name="enterWorkoutCancel">Zurück</string>
+    <string name="ExerciseName">Übung:</string>
+    <string name="ExerciseName2">Übung eingeben ...</string>
+</resources>
