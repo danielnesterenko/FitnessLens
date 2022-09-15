@@ -73,6 +73,16 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/medium_gray"
+        app:layout_constraintBottom_toTopOf="@+id/button_exerciseAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageButton
         android:id="@+id/button_exerciseAdd"
         android:layout_width="wrap_content"
@@ -105,6 +115,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_exerciseAdd"
         app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_exercise"
+        android:layout_width="409dp"
+        android:layout_height="547dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_exerciseAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appbar"
+        app:layout_constraintVertical_bias="0.593" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

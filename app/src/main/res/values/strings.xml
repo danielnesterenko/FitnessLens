@@ -16,4 +16,7 @@
     <string name="ExerciseName2">Enter Exercise ...</string>
     <string name="tV_addExercise">Add Exercise</string>
     <string name="tV_addSet">Add Set</string>
+    <string name="set">SET:</string>
+    <string name="rep">REPETITION:</string>
+    <string name="weight">WEIGHT:</string>
 </resources>
