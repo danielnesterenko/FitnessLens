@@ -15,18 +15,19 @@
         <entry key="app/src/main/res/drawable/workout.xml" value="0.501" />
         <entry key="app/src/main/res/font/lobster.xml" value="0.6203125" />
         <entry key="app/src/main/res/font/lobster_regular.xml" value="0.6203125" />
-        <entry key="app/src/main/res/layout/activity_enter_exercise_name.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/activity_enter_exercise_name.xml" value="0.5603448275862069" />
         <entry key="app/src/main/res/layout/activity_enter_workout_name.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_enter_workout_name2.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_exercise.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.43993231810490696" />
         <entry key="app/src/main/res/layout/activity_statistics.xml" value="0.5475543478260869" />
-        <entry key="app/src/main/res/layout/activity_workout.xml" value="0.625" />
+        <entry key="app/src/main/res/layout/activity_workout.xml" value="0.55" />
         <entry key="app/src/main/res/layout/fragment_calories.xml" value="0.5475543478260869" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.5475543478260869" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.5475543478260869" />
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.5475543478260869" />
         <entry key="app/src/main/res/layout/fragment_workout.xml" value="0.43993231810490696" />
+        <entry key="app/src/main/res/layout/new_exercise_layout.xml" value="0.575" />
         <entry key="app/src/main/res/layout/new_set_layout.xml" value="0.5901041666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.5760416666666667" />
         <entry key="app/src/main/res/menu/toolbar_main.xml" value="0.5911458333333334" />

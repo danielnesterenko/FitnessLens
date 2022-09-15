@@ -19,4 +19,6 @@
     <string name="set">SET:</string>
     <string name="rep">REPETITIONS:</string>
     <string name="weight">WEIGHT:</string>
+    <string name="exerciseNamePrefix">EXERCISE:</string>
+    <string name="liftedPrefix">WEIGHT IN TOTAL:</string>
 </resources>

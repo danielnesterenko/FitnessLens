@@ -9,16 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class RecyclerViewAdapterSet extends RecyclerView.Adapter<RecyclerViewAdapterSet.MyViewHolder> {
 
-    List<Exercises> exercisesList;
+    List<RV_SetClass> RVSetClassList;
     Context context;
 
-    public RecyclerViewAdapter(List<Exercises> exercisesList, Context context) {
-        this.exercisesList = exercisesList;
+    public RecyclerViewAdapterSet(List<RV_SetClass> RVSetClassList, Context context) {
+        this.RVSetClassList = RVSetClassList;
         this.context = context;
     }
 
@@ -40,7 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return exercisesList.size();
+        return RVSetClassList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

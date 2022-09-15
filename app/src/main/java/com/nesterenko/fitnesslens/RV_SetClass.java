@@ -1,6 +1,6 @@
 package com.nesterenko.fitnesslens;
 
-public class Exercises {
+public class RV_SetClass {
 
     //private int id;
     private String set;
@@ -8,7 +8,7 @@ public class Exercises {
     private String rep;
     private String weight;
 
-    public Exercises() {
+    public RV_SetClass() {
     }
 
     //public int getId() {

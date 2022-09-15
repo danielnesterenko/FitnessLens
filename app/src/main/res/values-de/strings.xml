@@ -17,4 +17,6 @@
     <string name="set">SATZ:</string>
     <string name="rep">WIEDERHOLUNGEN:</string>
     <string name="weight">GEWICHT:</string>
+    <string name="exerciseNamePrefix">ÜBUNG:</string>
+    <string name="liftedPrefix">GESAMTGEWICHT:</string>
 </resources>

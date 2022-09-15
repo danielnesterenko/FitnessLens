@@ -16,9 +16,11 @@ public class EnterWorkoutName extends AppCompatActivity {
         TextView workoutNameByEdit = findViewById(R.id.edit_workoutName);
 
         findViewById(R.id.button_enterWorkoutAdd).setOnClickListener(view -> {
-            Intent goToWorkout = new Intent(EnterWorkoutName.this, Workout.class);
-            goToWorkout.putExtra("workoutName", workoutNameByEdit.getText().toString());
-            startActivity(goToWorkout);
+            if (!workoutNameByEdit.getText().toString().isEmpty()){
+                Intent goToWorkout = new Intent(EnterWorkoutName.this, Workout.class);
+                goToWorkout.putExtra("workoutName", workoutNameByEdit.getText().toString());
+                startActivity(goToWorkout);
+            }
         });
 
         findViewById(R.id.button_enterWorkoutCancel).setOnClickListener(view -> {
