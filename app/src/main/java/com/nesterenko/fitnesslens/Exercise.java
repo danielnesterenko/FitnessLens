@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,19 +24,6 @@ public class Exercise extends AppCompatActivity {
         setContentView(R.layout.activity_exercise);
         getSupportActionBar().hide();
 
-        exercises.add(new Exercises());
-        exercises.add(new Exercises());
-
-        if (!exercises.isEmpty()) {
-            recyclerView = findViewById(R.id.rv_exercise);
-            //recyclerView.setHasFixedSize(true);
-            layoutManager = new LinearLayoutManager(Exercise.this);
-            recyclerView.setLayoutManager(layoutManager);
-            mAdapter = new RecyclerViewAdapter(exercises, this);
-            recyclerView.setAdapter(mAdapter);
-        }
-
-
 
 
         TextView exerciseHeader = findViewById(R.id.exerciseHeader);
@@ -46,14 +34,20 @@ public class Exercise extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.button_exerciseAdd).setOnClickListener(view -> {
-            exercises.add(new Exercises());
-            recyclerView = findViewById(R.id.newSetLayout);
-            recyclerView.setHasFixedSize(true);
-            layoutManager = new LinearLayoutManager(this);
-            recyclerView.setLayoutManager(layoutManager);
-            mAdapter = new RecyclerViewAdapter(exercises, this);
-            recyclerView.setAdapter(mAdapter);
+        findViewById(R.id.button_addSet).setOnClickListener(view -> {
+            if (exercises.isEmpty()) {
+                recyclerView = findViewById(R.id.rv_exercise);
+                recyclerView.setHasFixedSize(true);
+                layoutManager = new LinearLayoutManager(Exercise.this);
+                recyclerView.setLayoutManager(layoutManager);
+                mAdapter = new RecyclerViewAdapter(exercises, this);
+                recyclerView.setAdapter(mAdapter);
+                exercises.add(new Exercises());
+                mAdapter.notifyDataSetChanged();
+            } else {
+                exercises.add(new Exercises());
+                mAdapter.notifyDataSetChanged();
+            }
         });
     }
 }

@@ -4,6 +4,7 @@ public class Exercises {
 
     //private int id;
     private String set;
+    private String setNr;
     private String rep;
     private String weight;
 
@@ -24,6 +25,14 @@ public class Exercises {
 
     public void setSet(String set) {
         this.set = set;
+    }
+
+    public String getSetNr() {
+        return setNr;
+    }
+
+    public void setSetNr(String setNr) {
+        this.set = setNr;
     }
 
     public String getRep() {

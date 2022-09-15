@@ -33,6 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.tv_set.setText(holder.tv_set.getText());
+        holder.tv_setNr.setText(Integer.toString((position + 1)));
         holder.tv_rep.setText(holder.tv_rep.getText());
         holder.tv_weight.setText(holder.tv_weight.getText());
     }
@@ -45,12 +46,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_set;
+        TextView tv_setNr;
         TextView tv_rep;
         TextView tv_weight;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_set = itemView.findViewById(R.id.tv_set);
+            tv_setNr = itemView.findViewById(R.id.tv_setNr);
             tv_rep = itemView.findViewById(R.id.tv_rep);
             tv_weight = itemView.findViewById(R.id.tv_weight);
         }
