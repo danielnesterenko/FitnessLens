@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -39,7 +38,7 @@ public class Exercise extends AppCompatActivity {
 
         addSet.setOnClickListener(view -> {
             if (exercises.isEmpty()) {
-                recyclerView = findViewById(R.id.rv_exercise);
+                recyclerView = findViewById(R.id.rv_set);
                 recyclerView.setHasFixedSize(true);
                 layoutManager = new LinearLayoutManager(Exercise.this);
                 recyclerView.setLayoutManager(layoutManager);
@@ -61,7 +60,7 @@ public class Exercise extends AppCompatActivity {
             TextView editRep = findViewById(R.id.edit_rep);
             TextView editWeight = findViewById(R.id.edit_weight);
             double liftedInTotal = 0;
-            for (int i = 0; i < exercises.size(); i++) {
+            for (int i = (exercises.size() - 1); i >= 0; i--) {
                 exercises.get(i).setRep(Integer.parseInt(editRep.getText().toString()));
                 exercises.get(i).setWeight(Double.parseDouble(editWeight.getText().toString()));
                 double weight = exercises.get(i).getWeight();

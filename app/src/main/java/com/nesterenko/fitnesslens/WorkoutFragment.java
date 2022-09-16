@@ -1,15 +1,25 @@
 package com.nesterenko.fitnesslens;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +36,13 @@ public class WorkoutFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+    ArrayList<RV_WorkoutClass> workoutList = new ArrayList<>();
+
 
     public WorkoutFragment() {
         // Required empty public constructor
@@ -71,9 +88,36 @@ public class WorkoutFragment extends Fragment {
         Toolbar toolbar_workout = (Toolbar) view.findViewById(R.id.toolbar_workout);
         Menu menu = toolbar_workout.getMenu();
 
+
+        ActivityResultLauncher<Intent> getWorkoutData = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getData() != null && result.getResultCode() == RESULT_OK && result.getData().getStringExtra("name") != null) {
+                    String exerciseName = result.getData().getStringExtra("name");
+                    double liftedInTotal = result.getData().getDoubleExtra("lifted", 0.2);
+                    if (workoutList.isEmpty()) {
+                        recyclerView = view.findViewById(R.id.rv_workout);
+                        recyclerView.setHasFixedSize(true);
+                        layoutManager = new LinearLayoutManager(getContext());
+                        recyclerView.setLayoutManager(layoutManager);
+                        mAdapter = new RecyclerViewAdapterWorkout(workoutList, getContext());
+                        recyclerView.setAdapter(mAdapter);
+                        workoutList.add(new RV_WorkoutClass(exerciseName, Double.toString(liftedInTotal)));
+                        mAdapter.notifyDataSetChanged();
+                    } else {
+                        workoutList.add(new RV_WorkoutClass(exerciseName, Double.toString(liftedInTotal)));
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
+
+
+
+
         view.findViewById(R.id.toolbar_workout_addWorkout).setOnClickListener(btnView -> {
-            Intent goToWorkoutName = new Intent(getActivity(), EnterWorkoutName.class);
-            startActivity(goToWorkoutName);
+            Intent goToWorkoutName  = new Intent(getActivity(), EnterWorkoutName.class);
+            getWorkoutData.launch(goToWorkoutName);
         });
 
     }

@@ -116,7 +116,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_exercise"
+        android:id="@+id/rv_set"
         android:layout_width="409dp"
         android:layout_height="547dp"
         app:layout_constraintBottom_toTopOf="@+id/button_addSet"
