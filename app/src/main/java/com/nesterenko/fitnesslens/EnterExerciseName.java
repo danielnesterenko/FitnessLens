@@ -12,14 +12,20 @@ import android.widget.TextView;
 
 public class EnterExerciseName extends AppCompatActivity {
 
-/*    ActivityResultLauncher<Intent> getExerciseData = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+    ActivityResultLauncher<Intent> getExerciseData = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
-            if (result.getData() != null && result.getResultCode() == RESULT_OK && result.getData().getStringExtra("exerciseName") != null) {
-                name.setText(result.getData().getStringExtra("name"));
+            if (result.getData() != null && result.getResultCode() == RESULT_OK && result.getData().getStringExtra("name") != null) {
+                String enteredName = result.getData().getStringExtra("name");
+                double liftedInTotal = result.getData().getDoubleExtra("lifted", 0);
+                Intent intent = new Intent();
+                intent.putExtra("name", enteredName);
+                intent.putExtra("lifted", liftedInTotal);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         }
-    });*/
+    });
 
 
     @Override
@@ -37,7 +43,7 @@ public class EnterExerciseName extends AppCompatActivity {
             if (!exerciseNameByEdit.getText().toString().isEmpty()) {
                 Intent goToExercise = new Intent(EnterExerciseName.this, Exercise.class);
                 goToExercise.putExtra("exerciseName", exerciseNameByEdit.getText().toString());
-                startActivity(goToExercise);
+                getExerciseData.launch(goToExercise);
             }
         });
     }

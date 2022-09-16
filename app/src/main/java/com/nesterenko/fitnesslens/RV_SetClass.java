@@ -5,8 +5,8 @@ public class RV_SetClass {
     //private int id;
     private String set;
     private String setNr;
-    private String rep;
-    private String weight;
+    private int rep;
+    private double weight;
 
     public RV_SetClass() {
     }
@@ -35,19 +35,19 @@ public class RV_SetClass {
         this.set = setNr;
     }
 
-    public String getRep() {
+    public int getRep() {
         return rep;
     }
 
-    public void setRep(String rep) {
+    public void setRep(int rep) {
         this.rep = rep;
     }
 
-    public String getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 }

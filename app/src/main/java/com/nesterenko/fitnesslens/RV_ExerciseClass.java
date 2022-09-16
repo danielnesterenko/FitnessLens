@@ -8,7 +8,9 @@ public class RV_ExerciseClass {
     private String lifted;
     private String liftedSuffix;
 
-    public RV_ExerciseClass() {
+    public RV_ExerciseClass(String exerciseName, String lifted) {
+        this.exerciseName = exerciseName;
+        this.lifted = lifted;
     }
 
     public String getExerciseNamePrefix() {

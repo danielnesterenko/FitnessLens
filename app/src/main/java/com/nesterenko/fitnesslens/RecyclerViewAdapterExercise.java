@@ -32,7 +32,9 @@ public class RecyclerViewAdapterExercise extends RecyclerView.Adapter<RecyclerVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.exerciseNamePrefix.setText(holder.exerciseNamePrefix.getText());
+        holder.exerciseName.setText(RVExerciseClassList.get(position).getExerciseName());
         holder.liftedPrefix.setText(holder.liftedPrefix.getText());
+        holder.lifted.setText(RVExerciseClassList.get(position).getLifted());
         holder.liftedSuffix.setText(holder.liftedSuffix.getText());
     }
 
