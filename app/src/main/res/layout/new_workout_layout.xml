@@ -10,7 +10,7 @@
         android:id="@+id/tv_workoutName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="11dp"
         android:fontFamily="@font/monteserat_bold_font"
         android:text="Brusttraining"
         android:textColor="@color/dark_gray"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="11dp"
         android:fontFamily="@font/monteserat_bold_font"
         android:text="4000.00"
         android:textColor="@color/dark_gray"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="11dp"
         android:fontFamily="@font/monteserat_bold_font"
         android:text="KG"
         android:textColor="@color/dark_gray"
@@ -47,14 +47,13 @@
 
     <View
         android:id="@+id/divider3"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_marginTop="16dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_workoutName"
-        app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_workoutName" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"

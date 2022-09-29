@@ -66,10 +66,8 @@ public class Workout extends AppCompatActivity {
 
 
         toolbar_finishWorkout.setOnClickListener(view -> {
-            TextView liftedPerExercise = findViewById(R.id.tv_lifted);
             double liftedTotal = 0;
             for (int i = 0; i < exerciseList.size(); i++) {
-                exerciseList.get(i).setLifted(liftedPerExercise.getText().toString());
                 liftedTotal += Double.parseDouble(exerciseList.get(i).getLifted());
             }
             Intent intent = new Intent();

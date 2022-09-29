@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -54,20 +55,14 @@ public class Exercise extends AppCompatActivity {
 
 
         finishExercise.setOnClickListener(view -> {
-            String enteredName = exerciseHeader.getText().toString();
-
-
-            TextView editRep = findViewById(R.id.edit_rep);
-            TextView editWeight = findViewById(R.id.edit_weight);
             double liftedInTotal = 0;
-            for (int i = (exercises.size() - 1); i >= 0; i--) {
-                exercises.get(i).setRep(Integer.parseInt(editRep.getText().toString()));
-                exercises.get(i).setWeight(Double.parseDouble(editWeight.getText().toString()));
+            for (int i = 0; i < exercises.size(); i++) {
                 double weight = exercises.get(i).getWeight();
                 int rep = exercises.get(i).getRep();
                 liftedInTotal += (weight * rep);
             }
 
+            String enteredName = exerciseHeader.getText().toString();
             Intent intent = new Intent();
             intent.putExtra("name", enteredName);
             intent.putExtra("lifted", liftedInTotal);
