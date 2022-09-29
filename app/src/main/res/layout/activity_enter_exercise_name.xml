@@ -41,6 +41,8 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_ExerciseName"
         android:layout_width="0dp"
+        android:maxLines="1"
+        android:inputType="text"
         android:layout_height="wrap_content"
         android:hint="@string/ExerciseName2"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
