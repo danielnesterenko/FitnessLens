@@ -1,4 +1,6 @@
-# FitnessLens is a under Development Fitness tracking Application built in Java with Android Studio. It supports English & German Language.
+# FitnessLens
+
+FitnessLens is a under Development Fitness tracking Application built in Android Studio using Java. It supports English & German Language.
 
 <img width="534" alt="Workout_Fragment" src="https://user-images.githubusercontent.com/97851328/193058539-a9c98b09-3194-411b-b2a4-371613854ef3.png">
 <img width="538" alt="Exercises_Activity" src="https://user-images.githubusercontent.com/97851328/193058562-06d768d7-1a7e-4ad9-b3d8-63d5bb7e2a8e.png">
