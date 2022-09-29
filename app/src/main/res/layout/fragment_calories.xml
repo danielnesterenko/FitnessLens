@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D7C0AE"
-    tools:context=".CaloriesFragment">
+    tools:context=".Fragments.CaloriesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

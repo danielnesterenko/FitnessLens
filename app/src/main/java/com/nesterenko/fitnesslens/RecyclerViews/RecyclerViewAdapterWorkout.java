@@ -1,4 +1,4 @@
-package com.nesterenko.fitnesslens;
+package com.nesterenko.fitnesslens.RecyclerViews;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nesterenko.fitnesslens.R;
 
 import java.util.List;
 

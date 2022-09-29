@@ -1,4 +1,4 @@
-package com.nesterenko.fitnesslens;
+package com.nesterenko.fitnesslens.Fragments;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -18,6 +18,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.nesterenko.fitnesslens.EnterWorkoutName;
+import com.nesterenko.fitnesslens.R;
+import com.nesterenko.fitnesslens.RecyclerViews.RV_WorkoutClass;
+import com.nesterenko.fitnesslens.RecyclerViews.RecyclerViewAdapterWorkout;
 
 import java.util.ArrayList;
 

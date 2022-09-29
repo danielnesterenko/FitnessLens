@@ -1,4 +1,4 @@
-package com.nesterenko.fitnesslens;
+package com.nesterenko.fitnesslens.RecyclerViews;
 
 public class RV_ExerciseClass {
 

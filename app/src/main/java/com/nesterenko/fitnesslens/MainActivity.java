@@ -1,7 +1,6 @@
 package com.nesterenko.fitnesslens;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -9,6 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 
+import com.nesterenko.fitnesslens.Fragments.CaloriesFragment;
+import com.nesterenko.fitnesslens.Fragments.SettingsFragment;
+import com.nesterenko.fitnesslens.Fragments.StatisticsFragment;
+import com.nesterenko.fitnesslens.Fragments.WorkoutFragment;
 import com.nesterenko.fitnesslens.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

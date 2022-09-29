@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.nesterenko.fitnesslens.RecyclerViews.RV_ExerciseClass;
+import com.nesterenko.fitnesslens.RecyclerViews.RecyclerViewAdapterExercise;
 
 import java.util.ArrayList;
 
