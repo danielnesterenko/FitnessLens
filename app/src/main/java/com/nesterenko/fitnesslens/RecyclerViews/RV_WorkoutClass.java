@@ -1,10 +1,11 @@
 package com.nesterenko.fitnesslens.RecyclerViews;
 
-public class RV_WorkoutClass {
+import java.io.Serializable;
+
+public class RV_WorkoutClass implements Serializable {
 
     private String workoutName;
     private String lifted;
-    private String staticKG;
 
     public RV_WorkoutClass(String workoutName, String lifted) {
         this.workoutName = workoutName;

@@ -63,7 +63,6 @@ public class Exercise extends AppCompatActivity {
                 int rep = exercises.get(i).getRep();
                 liftedInTotal += (weight * rep);
             }
-
             String enteredName = exerciseHeader.getText().toString();
             Intent intent = new Intent();
             intent.putExtra("name", enteredName);

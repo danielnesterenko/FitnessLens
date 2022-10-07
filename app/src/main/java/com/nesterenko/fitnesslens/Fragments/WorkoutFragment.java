@@ -24,23 +24,18 @@ import com.nesterenko.fitnesslens.R;
 import com.nesterenko.fitnesslens.RecyclerViews.RV_WorkoutClass;
 import com.nesterenko.fitnesslens.RecyclerViews.RecyclerViewAdapterWorkout;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link WorkoutFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class WorkoutFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -48,50 +43,53 @@ public class WorkoutFragment extends Fragment {
 
     ArrayList<RV_WorkoutClass> workoutList = new ArrayList<>();
 
-
     public WorkoutFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment WorkoutFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static WorkoutFragment newInstance(String param1, String param2) {
-        WorkoutFragment fragment = new WorkoutFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_workout, container, false);
     }
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Toolbar toolbar_workout = (Toolbar) view.findViewById(R.id.toolbar_workout);
+        File workoutRecords = new File(getContext().getFilesDir(), "workoutRecords");
         Menu menu = toolbar_workout.getMenu();
+
+        //Codeblock used for developing when in need to clear workoutRecords.txt
+/*        try {
+            PrintWriter temp = new PrintWriter(workoutRecords);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }*/
+
+        recyclerView = view.findViewById(R.id.rv_workout);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        mAdapter = new RecyclerViewAdapterWorkout(workoutList, getContext());
+        recyclerView.setAdapter(mAdapter);
+
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(workoutRecords));
+            RV_WorkoutClass p1 = (RV_WorkoutClass) in.readObject();
+            workoutList.add(new RV_WorkoutClass(p1.getWorkoutName(), p1.getLifted()));
+            mAdapter.notifyDataSetChanged();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
         ActivityResultLauncher<Intent> getWorkoutData = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -109,15 +107,29 @@ public class WorkoutFragment extends Fragment {
                         recyclerView.setAdapter(mAdapter);
                         workoutList.add(new RV_WorkoutClass(exerciseName, Double.toString(liftedInTotal)));
                         mAdapter.notifyDataSetChanged();
+                        try {
+                            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(workoutRecords));
+                            for (RV_WorkoutClass object : workoutList) {
+                                out.writeObject(object);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     } else {
                         workoutList.add(new RV_WorkoutClass(exerciseName, Double.toString(liftedInTotal)));
                         mAdapter.notifyDataSetChanged();
+                        try {
+                            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(workoutRecords));
+                            for (RV_WorkoutClass object : workoutList) {
+                                out.writeObject(object);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
         });
-
-
 
 
         view.findViewById(R.id.toolbar_workout_addWorkout).setOnClickListener(btnView -> {

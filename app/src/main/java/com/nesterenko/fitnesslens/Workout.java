@@ -62,6 +62,7 @@ public class Workout extends AppCompatActivity {
         ImageButton toolbar_back = findViewById(R.id.toolbar_workout_back);
         ImageButton exerciseAdd = findViewById(R.id.button_exerciseAdd);
 
+
         toolbar_back.setOnClickListener(view -> {
             finish();
         });
@@ -79,6 +80,7 @@ public class Workout extends AppCompatActivity {
             finish();
         });
 
+        
         exerciseAdd.setOnClickListener(view -> {
             Intent goToExerciseName  = new Intent(Workout.this, EnterExerciseName.class);
             getExerciseData.launch(goToExerciseName);

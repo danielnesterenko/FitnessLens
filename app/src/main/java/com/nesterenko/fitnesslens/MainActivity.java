@@ -14,6 +14,7 @@ import com.nesterenko.fitnesslens.Fragments.StatisticsFragment;
 import com.nesterenko.fitnesslens.Fragments.WorkoutFragment;
 import com.nesterenko.fitnesslens.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
